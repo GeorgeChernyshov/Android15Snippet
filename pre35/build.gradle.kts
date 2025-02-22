@@ -7,13 +7,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.post35"
-    compileSdk = 35
+    namespace = "com.example.pre35"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.post35"
+        applicationId = "com.example.pre35"
         minSdk = 29
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.pre35.androidx.activity.compose)
     implementation(compose.uiTooling)
     implementation(compose.material3)
     implementation(libs.androidx.navigation.compose)

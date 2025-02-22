@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android15Snippet-pre35</string>
+
+    <!-- behavior changes -->
+    <string name="bc_toggle_dnd">Toggle Do-Not-Disturb Mode</string>
+    <string name="bc_toggle_dnd_hint">You should be able to toggle Do-Not-Disturb mode</string>
+
+    <!-- screen labels -->
+    <string name="label_behavior_changes">Behavior Changes</string>
+</resources>

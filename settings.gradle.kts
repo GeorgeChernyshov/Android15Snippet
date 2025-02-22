@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android15Snippet"
-include(":app")
- 
+include(":post35")
+include(":pre35")
