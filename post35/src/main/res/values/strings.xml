@@ -6,6 +6,8 @@
     <string name="bc_screen_recording_hint">Start recording the screen and send the notification.\n Check the recording afterwards</string>
     <string name="bc_screen_recording_visible">You probably have no special recording indicator. \n On the recording, you should see the notification content.</string>
     <string name="bc_send_notification">Send simple notification</string>
+    <string name="bc_toggle_dnd">Toggle Do-Not-Disturb Mode</string>
+    <string name="bc_toggle_dnd_hint">You should only be able to turn off Do-Not-disturb mode if it was not set manually or by other apps. This is due to the AutomaticZenRules that are responsible for that now.</string>
 
     <!-- notifications -->
     <string name="notification_channel_name">Notification Channel</string>
