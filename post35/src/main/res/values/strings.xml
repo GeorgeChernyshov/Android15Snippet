@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Android15Snippet-post35</string>
 
+    <string name="button_next">Next</string>
+
     <!-- behavior changes -->
     <string name="bc_screen_recording_hidden">You should see the recording indicator while the recording is active.\n On the recording, the notification should not be displayed.</string>
     <string name="bc_screen_recording_hint">Start recording the screen and send the notification.\n Check the recording afterwards</string>
@@ -8,6 +10,9 @@
     <string name="bc_send_notification">Send simple notification</string>
     <string name="bc_toggle_dnd">Toggle Do-Not-Disturb Mode</string>
     <string name="bc_toggle_dnd_hint">You should only be able to turn off Do-Not-disturb mode if it was not set manually or by other apps. This is due to the AutomaticZenRules that are responsible for that now.</string>
+
+    <!-- developer tools -->
+    <string name="dev_tools_flex_string">Flex font family became better is some ways but even more insufferable in others</string>
 
     <!-- notifications -->
     <string name="notification_channel_name">Notification Channel</string>
@@ -17,4 +22,5 @@
 
     <!-- screen labels -->
     <string name="label_behavior_changes">Behavior Changes</string>
+    <string name="label_developer_tools">Developer Tools</string>
 </resources>

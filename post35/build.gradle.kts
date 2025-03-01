@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.core.ktx)
     implementation(compose.uiTooling)
     implementation(compose.material3)
     implementation(libs.androidx.navigation.compose)

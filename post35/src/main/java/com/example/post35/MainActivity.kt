@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.post35.theme.Android15SnippetTheme
 import com.example.post35.navigation.Screen
 import com.example.post35.screen.BehaviorChangesScreen
+import com.example.post35.screen.DeveloperToolsScreen
 import com.example.post35.service.NotificationHelper
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,16 @@ class MainActivity : ComponentActivity() {
                 startDestination = Screen.BehaviorChanges
             ) {
                 composable<Screen.BehaviorChanges> {
-                    BehaviorChangesScreen(notificationHelper)
+                    BehaviorChangesScreen(
+                        notificationHelper = notificationHelper,
+                        onNextClick = {
+                            navController.navigate(Screen.DevTools)
+                        }
+                    )
+                }
+
+                composable<Screen.DevTools> {
+                    DeveloperToolsScreen()
                 }
             }
         }

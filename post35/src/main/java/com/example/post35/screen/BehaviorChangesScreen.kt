@@ -28,7 +28,10 @@ import com.example.post35.R
 import com.example.post35.service.NotificationHelper
 
 @Composable
-fun BehaviorChangesScreen(notificationHelper: NotificationHelper) {
+fun BehaviorChangesScreen(
+    notificationHelper: NotificationHelper,
+    onNextClick: () -> Unit
+) {
     val context = LocalContext.current
     val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE)
             as NotificationManager
@@ -84,6 +87,10 @@ fun BehaviorChangesScreen(notificationHelper: NotificationHelper) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(stringResource(R.string.bc_toggle_dnd))
+            }
+
+            Button(onClick = onNextClick) {
+                Text(stringResource(R.string.button_next))
             }
         }
     }

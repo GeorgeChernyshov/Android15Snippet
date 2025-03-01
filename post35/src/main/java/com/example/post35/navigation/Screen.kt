@@ -12,4 +12,10 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int) {
         route = "behaviorChanges",
         resourceId = R.string.label_behavior_changes
     )
+
+    @Serializable
+    data object DevTools : Screen(
+        route = "developerChanges",
+        resourceId = R.string.label_developer_tools
+    )
 }
