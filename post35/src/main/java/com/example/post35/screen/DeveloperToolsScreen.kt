@@ -10,10 +10,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -35,6 +37,7 @@ fun DeveloperToolsScreen() {
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            val textColor = MaterialTheme.colorScheme.onSurface
             AndroidView(factory = { context ->
                 TextView(context).apply {
                     val spannable = SpannableString(
@@ -46,6 +49,7 @@ fun DeveloperToolsScreen() {
 
                     spannable.setSpan(StyleSpan(Typeface.BOLD), 0, spannable.length - 7, 0)
 
+                    setTextColor(textColor.toArgb())
                     text = spannable
 
                     roboto(context)?.let {

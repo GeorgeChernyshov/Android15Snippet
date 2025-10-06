@@ -5,7 +5,7 @@
 
     <!-- behavior changes -->
     <string name="bc_screen_recording_hidden">You should see the recording indicator while the recording is active.\n On the recording, the notification should not be displayed.</string>
-    <string name="bc_screen_recording_hint">Start recording the screen and send the notification.\n Check the recording afterwards</string>
+    <string name="bc_screen_recording_hint">Start sharing the screen (via Screen Recorder, Zoom etc) and send the notification.\n Check the recording afterwards</string>
     <string name="bc_screen_recording_visible">You probably have no special recording indicator. \n On the recording, you should see the notification content.</string>
     <string name="bc_send_notification">Send simple notification</string>
     <string name="bc_toggle_dnd">Toggle Do-Not-Disturb Mode</string>
