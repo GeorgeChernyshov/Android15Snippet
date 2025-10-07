@@ -18,14 +18,18 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.post35.components.AppBar
 import com.example.post35.R
+import com.example.post35.ndk.PageSizeManager
 import com.example.post35.service.NotificationHelper
+import com.example.post35.theme.Android15SnippetTheme
 
 @Composable
 fun BehaviorChangesScreen(
@@ -35,6 +39,8 @@ fun BehaviorChangesScreen(
     val context = LocalContext.current
     val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE)
             as NotificationManager
+
+    val pageSize = remember { PageSizeManager().getSystemPageSize() }
 
     val activityLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
@@ -50,49 +56,123 @@ fun BehaviorChangesScreen(
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = stringResource(R.string.bc_screen_recording_hint),
-                modifier = Modifier.fillMaxWidth()
+            PageSizeBlock(pageSize)
+            NotificationPrivacyBlock(
+                onSendNotificationClick = {
+                    notificationHelper.handleSimpleNotification()
+                }
             )
 
-            Text(
-                text = stringResource(
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
-                        R.string.bc_screen_recording_hidden
-                    else R.string.bc_screen_recording_visible
-                ),
-                modifier = Modifier.fillMaxWidth()
-            )
-
-            Button(
-                onClick = { notificationHelper.handleSimpleNotification() },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(stringResource(R.string.bc_send_notification))
-            }
-
-            Text(stringResource(R.string.bc_toggle_dnd_hint))
-
-
-            Button(
-                onClick = {
+            DnDRulesBlock(
+                onToggleDndClick = {
                     if (!notificationManager.isNotificationPolicyAccessGranted) {
                         val intent = Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
                         activityLauncher.launch(intent)
                     } else toggleDND(notificationManager)
-                },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(stringResource(R.string.bc_toggle_dnd))
-            }
+                }
+            )
 
             Button(onClick = onNextClick) {
                 Text(stringResource(R.string.button_next))
             }
         }
+    }
+}
+
+@Composable
+fun PageSizeBlock(pageSize: Int) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Text(stringResource(
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
+                R.string.bc_page_size_big
+            else R.string.bc_page_size_small
+        ))
+
+        Text(stringResource(R.string.bc_page_size_actual, pageSize))
+    }
+}
+
+@Composable
+fun NotificationPrivacyBlock(
+    onSendNotificationClick: () -> Unit,
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Text(
+            text = stringResource(R.string.bc_screen_recording_hint),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Text(
+            text = stringResource(
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
+                    R.string.bc_screen_recording_hidden
+                else R.string.bc_screen_recording_visible
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Button(
+            onClick = onSendNotificationClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(R.string.bc_send_notification))
+        }
+    }
+}
+
+@Composable
+fun DnDRulesBlock(
+    onToggleDndClick: () -> Unit,
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Text(stringResource(R.string.bc_toggle_dnd_hint))
+
+        Button(
+            onClick = onToggleDndClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(R.string.bc_toggle_dnd))
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PageSizeBlockPreview() {
+    Android15SnippetTheme {
+        PageSizeBlock(pageSize = 16)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun NotificationPrivacyBlockPreview() {
+    Android15SnippetTheme {
+        NotificationPrivacyBlock(
+            onSendNotificationClick = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DnDRulesBlockPreview() {
+    Android15SnippetTheme {
+        DnDRulesBlock(
+            onToggleDndClick = {}
+        )
     }
 }
 

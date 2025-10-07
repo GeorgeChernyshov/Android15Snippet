@@ -4,6 +4,9 @@
     <string name="button_next">Next</string>
 
     <!-- behavior changes -->
+    <string name="bc_page_size_actual">Device page size is: %1$s bytes</string>
+    <string name="bc_page_size_big">Devices with Android 15 or higher might have 16KB page size</string>
+    <string name="bc_page_size_small">Devices with Android 14 or lower have 4KB page size</string>
     <string name="bc_screen_recording_hidden">You should see the recording indicator while the recording is active.\n On the recording, the notification should not be displayed.</string>
     <string name="bc_screen_recording_hint">Start sharing the screen (via Screen Recorder, Zoom etc) and send the notification.\n Check the recording afterwards</string>
     <string name="bc_screen_recording_visible">You probably have no special recording indicator. \n On the recording, you should see the notification content.</string>

@@ -10,6 +10,8 @@ android {
     namespace = "com.example.post35"
     compileSdk = 35
 
+    ndkVersion = "29.0.14206865"
+
     defaultConfig {
         applicationId = "com.example.post35"
         minSdk = 29
@@ -18,6 +20,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags("")
+            }
+        }
     }
 
     buildTypes {
@@ -27,6 +34,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
         }
     }
     compileOptions {
