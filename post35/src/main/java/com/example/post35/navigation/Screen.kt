@@ -18,4 +18,10 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int) {
         route = "developerChanges",
         resourceId = R.string.label_developer_tools
     )
+
+    @Serializable
+    data object PrivateSpace : Screen(
+        route = "privateSpace",
+        resourceId = R.string.label_private_space
+    )
 }

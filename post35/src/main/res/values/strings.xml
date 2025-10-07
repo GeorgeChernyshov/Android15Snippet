@@ -22,8 +22,20 @@
     <string name="notification_channel_description">Channel description</string>
     <string name="notification_title">My Notification</string>
     <string name="notification_text">Notification text</string>
+    <string name="notification_title_scheduled">Scheduled Notification</string>
+    <string name="notification_text_scheduled">Scheduled notification text</string>
+
+    <!-- private space -->
+    <string name="private_space_hint">Install the app to private space to test these changes</string>
+    <string name="private_space_install_hint">This is not the same app instance as in the public space. This is a separate, second installation of the app</string>
+    <string name="private_space_notification_visibility_hint">Press the button below to start receiving repeating notifications. They should work even if you close the app. You might have to go to settings and allow an app to schedule alarms if the app doesn\'t request it by itself.\n After you close private space, all app\'s notifications should be automatically deleted and new notifications should stop.</string>
+    <string name="private_space_start_repeating_notifications">Start Repeating Notifications</string>
+    <string name="private_space_stop_repeating_notifications">Stop Repeating Notifications</string>
+    <string name="private_space_visibility_hint">After you close the private space, information about this app being opened will be cleared from the recents menu. Information about them is not even available in the settings menu. There is no way to even know if this app is installed without opening the private space.</string>
 
     <!-- screen labels -->
     <string name="label_behavior_changes">Behavior Changes</string>
     <string name="label_developer_tools">Developer Tools</string>
+    <string name="label_private_space">Private space screen</string>
+
 </resources>
