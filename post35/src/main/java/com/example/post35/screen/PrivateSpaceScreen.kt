@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.post35.R
 import com.example.post35.components.AppBar
-import com.example.post35.service.NotificationHelper
+import com.example.post35.util.NotificationHelper
 import com.example.post35.theme.Android15SnippetTheme
 import com.example.post35.util.FileUtil
 import java.io.BufferedReader

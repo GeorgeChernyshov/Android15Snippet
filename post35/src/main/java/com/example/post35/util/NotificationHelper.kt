@@ -1,26 +1,17 @@
-package com.example.post35.service
+package com.example.post35.util
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.AlarmManager
-import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import android.os.SystemClock
 import android.provider.Settings
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import com.example.post35.Post35Application
-import com.example.post35.R
+import com.example.post35.util.NotificationSender
 
 class NotificationHelper(private val context: ComponentActivity) {
 

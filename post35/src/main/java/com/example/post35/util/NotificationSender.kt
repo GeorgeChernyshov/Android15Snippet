@@ -1,4 +1,4 @@
-package com.example.post35.service
+package com.example.post35.util
 
 import android.annotation.SuppressLint
 import android.app.AlarmManager
@@ -11,6 +11,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.post35.Post35Application
 import com.example.post35.R
+import com.example.post35.service.NotificationReceiver
 
 class NotificationSender(private val context: Context) {
 
@@ -24,7 +25,7 @@ class NotificationSender(private val context: Context) {
     @SuppressLint("MissingPermission")
     fun showNotification(title: String, text: String) {
         val builder = NotificationCompat
-            .Builder(context, Post35Application.NOTIFICATION_CHANNEL)
+            .Builder(context, Post35Application.Companion.NOTIFICATION_CHANNEL)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle(title)
             .setContentText(text)
@@ -55,7 +56,7 @@ class NotificationSender(private val context: Context) {
 
     fun getRepeatingNotificationPendingIntent(): PendingIntent {
         val intent = Intent(context, NotificationReceiver::class.java).apply {
-            action = NotificationReceiver.ACTION_SHOW_NOTIFICATION
+            action = NotificationReceiver.Companion.ACTION_SHOW_NOTIFICATION
             putExtra(
                 "NOTIFICATION_TITLE",
                 context.getString(R.string.notification_title_scheduled)

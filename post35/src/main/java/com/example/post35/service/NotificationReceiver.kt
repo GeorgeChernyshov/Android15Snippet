@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.SystemClock
 import com.example.post35.R
+import com.example.post35.util.NotificationSender
 
 class NotificationReceiver : BroadcastReceiver() {
 

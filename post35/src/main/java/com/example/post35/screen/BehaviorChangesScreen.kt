@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.example.post35.components.AppBar
 import com.example.post35.R
 import com.example.post35.ndk.PageSizeManager
-import com.example.post35.service.NotificationHelper
+import com.example.post35.util.NotificationHelper
 import com.example.post35.theme.Android15SnippetTheme
 
 @Composable
@@ -39,8 +39,6 @@ fun BehaviorChangesScreen(
     val context = LocalContext.current
     val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE)
             as NotificationManager
-
-    val pageSize = remember { PageSizeManager().getSystemPageSize() }
 
     val activityLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
@@ -59,7 +57,6 @@ fun BehaviorChangesScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            PageSizeBlock(pageSize)
             NotificationPrivacyBlock(
                 onSendNotificationClick = {
                     notificationHelper.handleSimpleNotification()
@@ -79,22 +76,6 @@ fun BehaviorChangesScreen(
                 Text(stringResource(R.string.button_next))
             }
         }
-    }
-}
-
-@Composable
-fun PageSizeBlock(pageSize: Int) {
-    Column(
-        modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        Text(stringResource(
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
-                R.string.bc_page_size_big
-            else R.string.bc_page_size_small
-        ))
-
-        Text(stringResource(R.string.bc_page_size_actual, pageSize))
     }
 }
 
@@ -145,14 +126,6 @@ fun DnDRulesBlock(
         ) {
             Text(stringResource(R.string.bc_toggle_dnd))
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PageSizeBlockPreview() {
-    Android15SnippetTheme {
-        PageSizeBlock(pageSize = 16)
     }
 }
 

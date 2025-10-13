@@ -4,6 +4,8 @@
     <string name="button_next">Next</string>
 
     <!-- behavior changes -->
+    <string name="bc_min_sdk_24_can">You can install apps targeting SDK 23 on this device</string>
+    <string name="bc_min_sdk_24_cannot">You cannot install apps targeting SDK 23 or lower on this device</string>
     <string name="bc_page_size_actual">Device page size is: %1$s bytes</string>
     <string name="bc_page_size_big">Devices with Android 15 or higher might have 16KB page size</string>
     <string name="bc_page_size_small">Devices with Android 14 or lower have 4KB page size</string>
@@ -41,6 +43,7 @@
 
     <!-- screen labels -->
     <string name="label_behavior_changes">Behavior Changes</string>
+    <string name="label_core_functionality">Core Functionality</string>
     <string name="label_developer_tools">Developer Tools</string>
     <string name="label_private_space">Private Space</string>
 

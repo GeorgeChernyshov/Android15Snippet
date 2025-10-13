@@ -8,6 +8,12 @@ import kotlinx.serialization.Serializable
 sealed class Screen(val route: String, @StringRes val resourceId: Int) {
 
     @Serializable
+    data object CoreFunctionality : Screen(
+        route = "coreFunctionality",
+        resourceId = R.string.label_core_functionality
+    )
+
+    @Serializable
     data object BehaviorChanges : Screen(
         route = "behaviorChanges",
         resourceId = R.string.label_behavior_changes
