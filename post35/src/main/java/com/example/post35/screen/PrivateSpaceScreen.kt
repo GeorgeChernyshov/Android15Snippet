@@ -7,7 +7,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.launch
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -58,7 +60,6 @@ fun PrivateSpaceScreen(notificationHelper: NotificationHelper) {
     }
 
     Scaffold(
-        modifier = Modifier.safeDrawingPadding(),
         topBar = { AppBar(name = stringResource(R.string.label_private_space)) }
     ) { paddingValues ->
         LazyColumn(
@@ -107,6 +108,10 @@ fun PrivateSpaceScreen(notificationHelper: NotificationHelper) {
                         pickTextFileLauncher.launch(arrayOf("text/plain"))
                     }
                 )
+            }
+
+            item {
+                Spacer(Modifier.height(64.dp))
             }
         }
     }

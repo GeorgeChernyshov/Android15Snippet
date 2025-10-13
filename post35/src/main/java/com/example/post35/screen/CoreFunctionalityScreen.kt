@@ -26,7 +26,6 @@ fun CoreFunctionalityScreen(onNextClick: () -> Unit) {
     val pageSize = remember { PageSizeManager().getSystemPageSize() }
 
     Scaffold(
-        modifier = Modifier.safeDrawingPadding(),
         topBar = { AppBar(name = stringResource(R.string.label_core_functionality)) }
     ) { paddingValues ->
         Column(

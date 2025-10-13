@@ -41,10 +41,17 @@
     <string name="private_space_storage_hint">Storage is separated between private and public space. Press the first button to create a file, and second one to read it. You should only be able to read files created by the public version of the app by the public version of the app, same goes for private version</string>
     <string name="private_space_visibility_hint">After you close the private space, information about this app being opened will be cleared from the recents menu. Information about them is not even available in the settings menu. There is no way to even know if this app is installed without opening the private space.</string>
 
+    <!-- UI -->
+    <string name="ui_edge_to_edge_enforced">Edge-to-edge is enforced on Android 15 onwards</string>
+    <string name="ui_edge_to_edge_not_enforced">Edge-to-edge is not enforced. In fact, it is disabled for this app.</string>
+    <string name="ui_predictive_back_not_supported">Predictive back animations are either experimental or not supported</string>
+    <string name="ui_predictive_back_supported">Predictive back animations are no longer experimental and fully supported by apps that opted in (like this one)</string>
+
     <!-- screen labels -->
     <string name="label_behavior_changes">Behavior Changes</string>
     <string name="label_core_functionality">Core Functionality</string>
     <string name="label_developer_tools">Developer Tools</string>
     <string name="label_private_space">Private Space</string>
+    <string name="label_user_interface">User Interface</string>
 
 </resources>

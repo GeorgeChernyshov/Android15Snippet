@@ -47,7 +47,6 @@ fun BehaviorChangesScreen(
     }
 
     Scaffold(
-        modifier = Modifier.safeDrawingPadding(),
         topBar = { AppBar(name = stringResource(R.string.label_behavior_changes)) }
     ) { paddingValues ->
         Column(

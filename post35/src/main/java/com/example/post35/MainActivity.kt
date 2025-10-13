@@ -13,6 +13,7 @@ import com.example.post35.screen.BehaviorChangesScreen
 import com.example.post35.screen.CoreFunctionalityScreen
 import com.example.post35.screen.DeveloperToolsScreen
 import com.example.post35.screen.PrivateSpaceScreen
+import com.example.post35.screen.UserInterfaceScreen
 import com.example.post35.util.NotificationHelper
 
 class MainActivity : ComponentActivity() {
@@ -45,6 +46,14 @@ class MainActivity : ComponentActivity() {
                 composable<Screen.BehaviorChanges> {
                     BehaviorChangesScreen(
                         notificationHelper = notificationHelper,
+                        onNextClick = {
+                            navController.navigate(Screen.UserInterface)
+                        }
+                    )
+                }
+
+                composable<Screen.UserInterface> {
+                    UserInterfaceScreen(
                         onNextClick = {
                             navController.navigate(Screen.DevTools)
                         }

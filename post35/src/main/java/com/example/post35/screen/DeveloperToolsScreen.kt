@@ -30,8 +30,7 @@ import com.example.post35.theme.roboto
 @Composable
 fun DeveloperToolsScreen(onNextClick: () -> Unit) {
     Scaffold(
-        modifier = Modifier.safeDrawingPadding(),
-        topBar = { AppBar(name = stringResource(R.string.label_behavior_changes)) }
+        topBar = { AppBar(name = stringResource(R.string.label_developer_tools)) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
